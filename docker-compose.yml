@@ -1,0 +1,12 @@
+version: '3'
+services:
+  flask-server:
+    build: .
+    
+    ports:
+      - "8000:8000"
+    volumes: [.:/app]
+    environment:
+      FLASK_DEBUG: 1
+      FLASK_APP: ./app.py
+  # Map the local 'app' directory to the '/app' directory in the container
